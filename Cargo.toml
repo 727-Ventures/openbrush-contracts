@@ -27,7 +27,7 @@ categories = ["no-std", "embedded"]
 include = ["Cargo.toml", "src/**/*.rs"]
 
 [dependencies]
-ink = { version = "5.0.0-alpha", default-features = false }
+ink = { version = "5.0.0", default-features = false }
 scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
 scale-info = { version = "2.6", default-features = false, features = ["derive"] }
 
@@ -42,9 +42,9 @@ crate-type = [
 ]
 
 [dev-dependencies]
-ink_env = "5.0.0-alpha"
+ink_env = "5.0.0"
 trybuild = "1.0.80"
-ink_e2e = "5.0.0-alpha"
+ink_e2e = "5.0.0"
 
 [features]
 default = ["std"]
