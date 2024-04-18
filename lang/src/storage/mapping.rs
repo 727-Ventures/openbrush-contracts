@@ -163,6 +163,11 @@ where
     fn decode<I: Input>(_input: &mut I) -> Result<Self, Error> {
         Ok(Default::default())
     }
+
+    #[inline]
+    fn encoded_size(&self) -> usize {
+        0
+    }
 }
 
 impl<K, V, Key, TGK, TGV, InnerKey> StorableHint<Key> for Mapping<K, V, InnerKey, TGK, TGV>
@@ -228,9 +233,10 @@ const _: () = {
         TGV: 'static,
     {
         fn layout(_: &Key) -> Layout {
-            Layout::Root(RootLayout::new::<Self, _>(
+            Layout::Root(RootLayout::new(
                 LayoutKey::from(&KeyType::KEY),
                 <V as StorageLayout>::layout(&KeyType::KEY),
+                scale_info::meta_type::<Self>(),
             ))
         }
     }
