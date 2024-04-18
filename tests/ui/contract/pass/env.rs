@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub struct Env;
 
 impl ink_env::Environment for Env {
@@ -10,6 +11,7 @@ impl ink_env::Environment for Env {
     type ChainExtension = ();
 }
 
+#[allow(non_local_definitions)]
 #[openbrush::contract(env = super::Env)]
 mod base_psp22 {
     use openbrush::traits::Storage;
@@ -17,15 +19,13 @@ mod base_psp22 {
     #[ink(storage)]
     #[derive(Storage)]
     pub struct PSP22Struct {
-        pub value: bool
+        pub value: bool,
     }
 
     impl PSP22Struct {
         #[ink(constructor)]
         pub fn new(value: bool) -> Self {
-            Self {
-                value
-            }
+            Self { value }
         }
 
         #[ink(message)]

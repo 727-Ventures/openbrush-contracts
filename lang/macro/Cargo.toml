@@ -1,6 +1,6 @@
 [package]
 name = "openbrush_lang_macro"
-version= "4.0.0-beta.1"
+version= "4.0.1-beta.1"
 authors = ["Brushfam <green@727.ventures>"]
 edition = "2021"
 
@@ -14,7 +14,7 @@ categories = ["no-std", "embedded"]
 include = ["Cargo.toml", "src/**/*.rs"]
 
 [dependencies]
-openbrush_lang_codegen = { version = "~4.0.0-beta.1", path = "../codegen", default-features = false }
+openbrush_lang_codegen = { version = "~4.0.1-beta.1", path = "../codegen", default-features = false }
 syn = "1"
 proc-macro2 = "1"
 synstructure = "0.12"
@@ -31,6 +31,7 @@ openbrush = { package = "openbrush_lang", path = "..", default-features = false 
 name = "openbrush_lang_macro"
 path = "src/lib.rs"
 proc-macro = true
+doctest = false
 
 [features]
 default = ["std"]

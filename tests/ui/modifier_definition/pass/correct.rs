@@ -1,3 +1,4 @@
+#[allow(non_local_definitions)]
 #[openbrush::contract]
 mod base_psp22 {
     use openbrush::traits::Storage;

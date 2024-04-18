@@ -1,6 +1,6 @@
 [package]
 name = "openbrush_contracts"
-version= "4.0.0-beta.1"
+version= "4.0.1-beta.1"
 authors = ["Brushfam <green@727.ventures>"]
 edition = "2021"
 
@@ -20,7 +20,7 @@ scale = { package = "parity-scale-codec", version = "3", default-features = fals
 scale-info = { version = "2.6", default-features = false, features = ["derive"], optional = true }
 hex = { version = "0.4.3", default-features = false, features = ["alloc"] }
 
-openbrush = { version = "~4.0.0-beta.1", package = "openbrush_lang", path = "../lang", default-features = false, features = ["crypto", "checkpoints"] }
+openbrush = { version = "~4.0.1-beta.1", package = "openbrush_lang", path = "../lang", default-features = false, features = ["crypto", "checkpoints"] }
 
 [lib]
 name = "openbrush_contracts"
